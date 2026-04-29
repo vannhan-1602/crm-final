@@ -1,0 +1,26 @@
+/* Custom SuiteCRM Style */
+.crm-table-header {
+  background-color: #889299 !important;
+  color: white;
+  font-size: 0.85rem;
+}
+.crm-btn-blue {
+  background-color: #337ab7;
+  color: white;
+  border: none;
+}
+.crm-btn-blue:hover {
+  background-color: #286090;
+  color: white;
+}
+.crm-tab-active {
+  background-color: #889299 !important;
+  color: white !important;
+  border-radius: 0 !important;
+}
+.crm-tab-inactive {
+  background-color: #e5e5e5;
+  color: #777;
+  border-radius: 0 !important;
+  margin-right: 2px;
+}

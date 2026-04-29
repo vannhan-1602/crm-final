@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost:3306/CRMOnline_Pro"
+    username: root
+    password: root
+  application:
+    name: crm-ver01
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+server:
+  servlet:
+    context-path: /crm-ver1
+  port: 8081
