@@ -58,6 +58,24 @@ const Sidebar = () => {
         >
           Quản lý Thu / Chi
         </NavLink>
+
+        <NavLink
+          to="/san-pham"
+          className={({ isActive }) =>
+            `nav-link ${isActive ? "bg-primary text-white" : "text-light"}`
+          }
+        >
+          Quản lý Sản phẩm
+        </NavLink>
+        <NavLink
+          to="/co-hoi"
+          className={({ isActive }) =>
+            `nav-link ${isActive ? "bg-primary text-white" : "text-light"}`
+          }
+        >
+          Cơ hội Bán hàng
+        </NavLink>
+
         <NavLink
           to="/kho-hang"
           className={({ isActive }) =>

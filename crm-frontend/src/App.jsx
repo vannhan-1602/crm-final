@@ -13,6 +13,8 @@ import HopDongManager from "./pages/HopDong/HopDongManager";
 import HoaDonManager from "./pages/HoaDon/HoaDonManager";
 import PhieuThuChiManager from "./pages/ThuChi/PhieuThuChiManager";
 import KhoHangManager from "./pages/KhoHang/KhoHangManager";
+import SanPhamManager from "./pages/SanPham/SanPhamManager";
+import CoHoiManager from "./pages/CoHoi/CoHoiManager";
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
                 <Route path="/hoa-don" element={<HoaDonManager />} />
                 <Route path="/thu-chi" element={<PhieuThuChiManager />} />
                 <Route path="/kho-hang" element={<KhoHangManager />} />
+                <Route path="/san-pham" element={<SanPhamManager />} />
+                <Route path="/co-hoi" element={<CoHoiManager />} />
               </Routes>
             </div>
           </div>
