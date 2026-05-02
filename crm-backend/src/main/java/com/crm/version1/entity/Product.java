@@ -4,7 +4,7 @@ import lombok.Data;
 import jakarta.persistence.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import java.math.BigDecimal;
-
+import java.util.List;
 @Data
 @Entity
 @CrossOrigin(origins = "*")
@@ -36,4 +36,7 @@ public class Product {
 
     @Column(name = "TrangThai")
     private Boolean trangThai = true;
+
+    @OneToMany(mappedBy = "sanPhamId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ProductImage> hinhAnhs;
 }
