@@ -6,7 +6,6 @@ const HopDongManager = () => {
   const [customers, setCustomers] = useState([]);
   const [view, setView] = useState("list");
 
-  // Tương đương data form trong Vanilla JS của bạn kia
   const [formData, setFormData] = useState({
     customerId: "",
     maHopDong: "",
@@ -17,13 +16,11 @@ const HopDongManager = () => {
 
   const fetchData = useCallback(async () => {
     try {
-      // Lấy danh sách hợp đồng và khách hàng theo chuẩn API của bạn kia
       const [contractRes, custRes] = await Promise.all([
         api.get("/contracts"),
-        api.get("/khach-hang"), // Dùng chung API Khách Hàng của bạn
+        api.get("/khach-hang"),
       ]);
-      // API của bạn kia trả về nằm trong { data: [...] }
-      setContracts(contractRes.data.data || contractRes.data);
+      setContracts(contractRes.data);
       setCustomers(custRes.data);
     } catch (err) {
       console.error(err);
@@ -37,7 +34,7 @@ const HopDongManager = () => {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      // Gọi API lưu hợp đồng giống hệt hàm apiPost('/contracts/'+cid, d) của bạn kia
+      
       await api.post(`/contracts/${formData.customerId}`, {
         maHopDong: formData.maHopDong,
         ngayKy: formData.ngayKy,

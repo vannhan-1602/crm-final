@@ -17,8 +17,8 @@ const KhoHangManager = () => {
         api.get("/inventory-cards"),
         api.get("/products"),
       ]);
-      setInventoryCards(invRes.data.data || invRes.data);
-      setProducts(prodRes.data.data || prodRes.data);
+      setInventoryCards(invRes.data);
+      setProducts(prodRes.data);
     } catch (err) {
       console.error(err);
     }

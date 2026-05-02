@@ -21,14 +21,14 @@ const PhieuThuChiManager = () => {
         api.get("/khach-hang"),
         api.get("/invoices"),
       ]);
-      setReceipts(rcpRes.data.data || rcpRes.data);
+
+      setReceipts(rcpRes.data);
       setCustomers(custRes.data);
-      setInvoices(invRes.data.data || invRes.data);
+      setInvoices(invRes.data);
     } catch (err) {
       console.error(err);
     }
   }, []);
-
   useEffect(() => {
     fetchData();
   }, [fetchData]);

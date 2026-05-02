@@ -20,8 +20,8 @@ const HoaDonManager = () => {
         api.get("/contracts"),
         api.get("/khach-hang"),
       ]);
-      setInvoices(invRes.data.data || invRes.data);
-      setContracts(ctrtRes.data.data || ctrtRes.data);
+      setInvoices(invRes.data);
+      setContracts(ctrtRes.data);
       setCustomers(custRes.data);
     } catch (err) {
       console.error(err);

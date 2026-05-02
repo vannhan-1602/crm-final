@@ -8,7 +8,6 @@ const LeadManager = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [editId, setEditId] = useState(null);
 
-  // Full các trường trong DB KH_Lead
   const initialForm = {
     tenLead: "",
     tenCongTy: "",
