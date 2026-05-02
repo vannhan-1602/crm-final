@@ -81,6 +81,14 @@ const Sidebar = () => {
           className={({ isActive }) =>
             `nav-link ${isActive ? "bg-primary text-white" : "text-light"}`
           }
+        >   Quản Lý Ticket
+        </NavLink>
+
+        <NavLink
+            to="/tickets"
+            className={({ isActive }) =>
+                `nav-link ${isActive ? "bg-primary text-white" : "text-light"}`
+            }
         >
           Quản lý Kho
         </NavLink>

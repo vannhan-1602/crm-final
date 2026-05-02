@@ -15,6 +15,7 @@ import PhieuThuChiManager from "./pages/ThuChi/PhieuThuChiManager";
 import KhoHangManager from "./pages/KhoHang/KhoHangManager";
 import SanPhamManager from "./pages/SanPham/SanPhamManager";
 import CoHoiManager from "./pages/CoHoi/CoHoiManager";
+import TicketManager from "./pages/Ticket/TicketManager.jsx";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
                 <Route path="/kho-hang" element={<KhoHangManager />} />
                 <Route path="/san-pham" element={<SanPhamManager />} />
                 <Route path="/co-hoi" element={<CoHoiManager />} />
+                <Route path="/tickets" element={<TicketManager />} />
               </Routes>
             </div>
           </div>

@@ -1,9 +1,12 @@
 package com.crm.version1.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import jakarta.persistence.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 @Data
 @Entity
@@ -36,7 +39,10 @@ public class Product {
 
     @Column(name = "TrangThai")
     private Boolean trangThai = true;
-
     @OneToMany(mappedBy = "sanPhamId", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ProductImage> hinhAnhs;
+    private List<ProductImage> hinhAnhs=new ArrayList<>();
+    @Column(name="CreatedAt")
+    private Date createdAt;
+    @Column(name="UpdatedAt")
+    private Date updatedAt;
 }
