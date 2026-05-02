@@ -65,18 +65,35 @@ npm run dev
 
 ## III. CÁC PHÂN HỆ NGHIỆP VỤ CHÍNH
 
-1. Phan he Quan ly Khach hang tiem nang (Lead)
+Hệ thống được thiết kế bao gồm 6 phân hệ cốt lõi, liên kết chặt chẽ với nhau tạo thành một quy trình khép kín từ lúc tiếp cận khách hàng đến khi chốt sale và quản lý sau bán:
 
+1. **Phân hệ Quản lý Khách hàng tiềm năng (Lead)**
    * Thêm mới, cập nhật, xóa và tìm kiếm hồ sơ Lead từ nhiều nguồn tiếp cận khác nhau.
-   * Giao việc / Phân công: chỉ định Lead cho từng nhân viên kinh doanh phụ trách.
-   * Chuyển đổi (Convert): Cập nhật trạng thái Lead thành Khách hàng chính thức khi phát sinh giao dịch thành công.
-2. Phan he Quan ly Khach hang to chuc va ca nhan (B2B / B2C)
+   * **Giao việc / Phân công:** Chỉ định Lead cho từng nhân viên kinh doanh phụ trách.
+   * **Chuyển đổi (Convert):** Tự động chuyển trạng thái Lead thành Khách hàng chính thức (B2B/B2C) khi phát sinh giao dịch thành công.
 
-   * Lưu trữ và phân loại hồ sơ khách hàng theo cá nhân hoặc tổ chức.
-   * Quản lý các thông tin chi tiết: Tên, Mã số thuế, Thông tin liên hệ, Loại hình kinh doanh và Tình trạng giao dịch.
-3. Phan he Nhat ky va Lich hen (Hoat dong CSKH)
+2. **Phân hệ Quản lý Khách hàng (B2B / B2C)**
+   * Lưu trữ và phân loại hồ sơ khách hàng theo cá nhân (Cá nhân VIP, Khách lẻ) hoặc tổ chức (B2B).
+   * Quản lý các thông tin chi tiết: Tên, Mã số thuế, Liên hệ, Tình trạng giao dịch (Đang GD, Tạm ngừng,...).
+   * Xóa mềm (Soft Delete) giúp bảo toàn dữ liệu lịch sử.
 
-   * Ghi nhận chi tiết nhật ký tương tác với khách hàng bao gồm: Cuộc gọi, Cuộc gặp mặt, Email, Zalo.
-   * Liên kết dữ liệu: Mỗi hoạt động bắt buộc phải được tham chiếu trực tiếp đến một khách hàng tiềm năng (Lead) hoặc khách hàng chính thức (B2B/B2C).
-   * Truy xuất lịch sử: Hiển thị đầy đủ mốc thời gian, người thực hiện và nội dung chi tiết của từng lần tương tác.
+3. **Phân hệ CSKH (Nhật ký & Lịch hẹn)**
+   * Ghi nhận chi tiết lịch sử tương tác: Cuộc gọi, Cuộc gặp mặt, Email, Zalo.
+   * Liên kết dữ liệu chéo: Mỗi hoạt động bắt buộc tham chiếu trực tiếp đến một khách hàng tiềm năng (Lead) hoặc khách hàng chính thức.
+   * Theo dõi tiến độ chăm sóc khách hàng của từng nhân viên.
+
+4. **Phân hệ Quản lý Hợp đồng (Contract)**
+   * Khởi tạo và quản lý hợp đồng gắn liền với Khách hàng.
+   * Theo dõi chi tiết: Mã hợp đồng, Ngày ký, Thời hạn hợp đồng.
+   * Quản lý vòng đời hợp đồng qua các trạng thái: Đang thực hiện, Tạm dừng, Thanh lý.
+
+5. **Phân hệ Tài chính (Hóa đơn & Phiếu Thu/Chi)**
+   * **Hóa đơn (Invoice):** Xuất hóa đơn dựa trên Hợp đồng đã ký. 
+   * **Thu/Chi (Receipt/Payment):** Lập phiếu thu tiền hoặc chi tiền, gắn trực tiếp vào Hóa đơn tương ứng.
+   * **Tự động hóa:** Hệ thống tự động đối soát số tiền đã thu và cập nhật trạng thái Hóa đơn một cách thông minh (*Chưa thanh toán -> Thanh toán 1 phần -> Hoàn tất*).
+
+6. **Phân hệ Quản lý Kho hàng & Sản phẩm (Inventory)**
+   * Quản lý danh mục Sản phẩm và số lượng tồn kho thực tế.
+   * **Thẻ kho (Inventory Card):** Ghi nhận chi tiết mọi biến động kho thông qua các loại giao dịch: *Nhập mua, Xuất bán, Nhập trả khách, Xuất trả NCC, Xuất hủy, Kiểm kê*.
+   * **Tự động hóa:** Tự động cộng/trừ số lượng tồn kho của sản phẩm mỗi khi phát sinh giao dịch xuất/nhập, đảm bảo dữ liệu kho luôn chính xác (Real-time).
 
