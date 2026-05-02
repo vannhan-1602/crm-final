@@ -1,5 +1,5 @@
 package com.crm.version1.Controller;
-import com.crm.version1.common.ApiResponse;
+
 import com.crm.version1.entity.KhachHang;
 import com.crm.version1.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,20 +15,20 @@ public class CustomerController {
     private final CustomerRepository customerRepository;
 
     @GetMapping
-    public ResponseEntity<ApiResponse<List<KhachHang>>> getAll() {
-        return ResponseEntity.ok(ApiResponse.success("Success", customerRepository.findByIsDeletedFalse()));
+    public ResponseEntity<List<KhachHang>> getAll() {
+        return ResponseEntity.ok(customerRepository.findByIsDeletedFalse());
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<KhachHang>> create(@RequestBody KhachHang customer) {
-        return ResponseEntity.ok(ApiResponse.success("Created", customerRepository.save(customer)));
+    public ResponseEntity<KhachHang> create(@RequestBody KhachHang customer) {
+        return ResponseEntity.ok(customerRepository.save(customer));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResponse<String>> softDelete(@PathVariable Long id) {
+    public ResponseEntity<String> softDelete(@PathVariable Long id) {
         KhachHang c = customerRepository.findById(id).orElseThrow(() -> new RuntimeException("Not found"));
         c.setIsDeleted(true);
         customerRepository.save(c);
-        return ResponseEntity.ok(ApiResponse.success("Deleted", null));
+        return ResponseEntity.ok("Deleted");
     }
 }

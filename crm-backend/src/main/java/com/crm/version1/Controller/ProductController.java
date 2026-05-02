@@ -1,5 +1,5 @@
 package com.crm.version1.Controller;
-import com.crm.version1.common.ApiResponse;
+
 import com.crm.version1.entity.Product;
 import com.crm.version1.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,12 +15,12 @@ public class ProductController {
     private final ProductRepository productRepository;
 
     @GetMapping
-    public ResponseEntity<ApiResponse<List<Product>>> getAll() {
-        return ResponseEntity.ok(ApiResponse.success("Success", productRepository.findAll()));
+    public ResponseEntity<List<Product>> getAll() {
+        return ResponseEntity.ok(productRepository.findAll());
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<Product>> create(@RequestBody Product product) {
-        return ResponseEntity.ok(ApiResponse.success("Created", productRepository.save(product)));
+    public ResponseEntity<Product> create(@RequestBody Product product) {
+        return ResponseEntity.ok(productRepository.save(product));
     }
 }

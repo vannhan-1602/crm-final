@@ -9,12 +9,12 @@ import lombok.Data;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id; // Bảng HT_User dùng kiểu INT cho ID
+    private Integer id;
 
     @Column(name = "Username", nullable = false, unique = true)
     private String username;
 
-    // Không trả về Password khi gọi API để bảo mật
+
     @Column(name = "Password", nullable = false)
     private String password;
 

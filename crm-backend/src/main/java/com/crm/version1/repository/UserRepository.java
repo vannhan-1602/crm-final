@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-    // Spring Data JPA sẽ tự động hỗ trợ các hàm findAll(), findById()...
+
 }

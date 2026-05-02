@@ -1,6 +1,6 @@
-package com.crm.version1.Service.impl;
+package com.crm.version1.Service;
+
 import com.crm.version1.entity.*;
-import com.crm.version1.enums.TransactionType;
 import com.crm.version1.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class InventoryCardServiceImpl {
+public class InventoryCardService {
     private final InventoryCardRepository cardRepo;
     private final ProductRepository productRepo;
 
@@ -22,7 +22,7 @@ public class InventoryCardServiceImpl {
                 throw new RuntimeException("Không đủ hàng trong kho!");
             }
             product.setSoLuongTon(product.getSoLuongTon() - card.getSoLuongThayDoi());
-        } 
+        }
         else if (card.getLoaiGiaoDich() == TransactionType.NhapMua) {
             product.setSoLuongTon(product.getSoLuongTon() + card.getSoLuongThayDoi());
         }

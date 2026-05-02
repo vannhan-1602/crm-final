@@ -1,6 +1,6 @@
-package com.crm.version1.Service.impl;
+package com.crm.version1.Service;
+
 import com.crm.version1.entity.*;
-import com.crm.version1.enums.*;
 import com.crm.version1.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -8,13 +8,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class ReceiptPaymentServiceImpl {
+public class ReceiptPaymentService {
     private final ReceiptPaymentRepository receiptRepo;
     private final InvoiceRepository invoiceRepo;
 
     @Transactional
     public ReceiptPayment createReceipt(ReceiptPayment receipt) {
         ReceiptPayment savedReceipt = receiptRepo.save(receipt);
+
+        // Bỏ đoạn com.crm.version1.enums. ở phía trước đi
         if (receipt.getLoaiPhieu() == ReceiptType.Thu && receipt.getInvoice() != null) {
             Invoice invoice = invoiceRepo.findById(receipt.getInvoice().getId())
                     .orElseThrow(() -> new RuntimeException("Invoice not found"));

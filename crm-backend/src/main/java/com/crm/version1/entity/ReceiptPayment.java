@@ -1,5 +1,5 @@
 package com.crm.version1.entity;
-import com.crm.version1.enums.ReceiptType;
+
 import lombok.Data;
 import jakarta.persistence.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,7 +15,7 @@ public class ReceiptPayment {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String maPhieu;
-    
+
     @Enumerated(EnumType.STRING)
     private ReceiptType loaiPhieu;
 

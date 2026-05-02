@@ -1,2 +1,2 @@
-package com.crm.version1.enums;
+package com.crm.version1.entity;
 public enum ReceiptType { Thu, Chi }

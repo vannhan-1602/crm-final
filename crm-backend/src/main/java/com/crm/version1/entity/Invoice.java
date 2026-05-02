@@ -1,5 +1,5 @@
 package com.crm.version1.entity;
-import com.crm.version1.enums.InvoiceStatus;
+
 import lombok.Data;
 import jakarta.persistence.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
