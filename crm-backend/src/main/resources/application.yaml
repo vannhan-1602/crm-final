@@ -2,7 +2,7 @@ spring:
   datasource:
     url: "jdbc:mysql://localhost:3306/CRMOnline_Pro"
     username: root
-    password:
+    password: root
   application:
     name: crm-ver01
   jpa:

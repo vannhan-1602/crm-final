@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 @Entity
 @Data
-@Table(name = "bh_loaisanpham")
+@Table(name = "BH_LoaiSanPham")
 public class LoaiSanPham {
 
     @Id
@@ -12,8 +12,8 @@ public class LoaiSanPham {
     private Integer id;
 
     @Column(name = "TenLoai")
-    private String tenLoai;  // ✅ đổi "ten" → "tenLoai"
+    private String tenLoai;
 
     @Column(name = "Mota")
-    private String moTa;     // ✅ đổi "mota" → "moTa"
+    private String moTa;
 }

@@ -17,7 +17,7 @@ public class ProductImage {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SanPham_Id", insertable = false, updatable = false)
-    @JsonIgnore  // <-- thêm dòng này
+    @JsonIgnore
     private Product product;
 
     @Column(name = "UrlHinhAnh", nullable = false)

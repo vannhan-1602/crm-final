@@ -68,6 +68,23 @@ const Sidebar = () => {
           Quản lý Sản phẩm
         </NavLink>
         <NavLink
+          to="/bao-gia"
+          className={({ isActive }) =>
+            `nav-link ${isActive ? "bg-primary text-white" : "text-light"}`
+          }
+        >
+          Quản lý Báo giá
+        </NavLink>
+
+        <NavLink
+          to="/bao-cao"
+          className={({ isActive }) =>
+            `nav-link ${isActive ? "bg-primary text-white" : "text-light"}`
+          }
+        >
+          Báo cáo Thống kê
+        </NavLink>
+        <NavLink
           to="/co-hoi"
           className={({ isActive }) =>
             `nav-link ${isActive ? "bg-primary text-white" : "text-light"}`
@@ -77,18 +94,20 @@ const Sidebar = () => {
         </NavLink>
 
         <NavLink
+          to="/tickets"
+          className={({ isActive }) =>
+            `nav-link ${isActive ? "bg-primary text-white" : "text-light"}`
+          }
+        >
+          {" "}
+          Quản Lý Ticket
+        </NavLink>
+
+        <NavLink
           to="/kho-hang"
           className={({ isActive }) =>
             `nav-link ${isActive ? "bg-primary text-white" : "text-light"}`
           }
-        >   Quản Lý Ticket
-        </NavLink>
-
-        <NavLink
-            to="/tickets"
-            className={({ isActive }) =>
-                `nav-link ${isActive ? "bg-primary text-white" : "text-light"}`
-            }
         >
           Quản lý Kho
         </NavLink>

@@ -20,10 +20,10 @@ public class CoHoiBanHang {
     @Column(name = "GiaiDoan")
     private String giaiDoan = "KhaoSat";
 
-    @Column(name = "KhachHang_Id") // Sửa ở đây
+    @Column(name = "KhachHang_Id")
     private Long khachHangId;
 
-    @Column(name = "Lead_Id") // Sửa ở đây
+    @Column(name = "Lead_Id")
     private Long leadId;
 
     @Column(name = "TyLeThanhCong")

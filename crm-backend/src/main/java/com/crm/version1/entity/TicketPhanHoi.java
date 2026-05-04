@@ -2,6 +2,8 @@ package com.crm.version1.entity;
 
 import com.crm.version1.entity.enums.LoaiPhanHoi;
 import com.crm.version1.entity.enums.TrangThaiTicket;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -9,10 +11,11 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "tk_ticket_phanhoi")
+@Table(name = "TK_Ticket_PhanHoi")
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class TicketPhanHoi {
 
     @Id
@@ -23,6 +26,7 @@ public class TicketPhanHoi {
     /** FK → tk_ticket */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Ticket_Id", nullable = false)
+    @JsonIgnore
     private Ticket ticket;
 
     /** FK → ht_user – người ghi phản hồi */

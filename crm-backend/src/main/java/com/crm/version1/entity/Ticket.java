@@ -3,6 +3,7 @@ package com.crm.version1.entity;
 import com.crm.version1.entity.enums.MucDoUuTien;
 import com.crm.version1.entity.enums.NguonTiepNhan;
 import com.crm.version1.entity.enums.TrangThaiTicket;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -13,10 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "tk_ticket")
+@Table(name = "TK_Ticket")
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Ticket {
 
     @Id
